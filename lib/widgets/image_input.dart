@@ -17,6 +17,9 @@ class _ImageInputState extends State<ImageInput> {
       source: ImageSource.camera,
       maxWidth: 600,
     );
+    setState(() {
+      _storedImage = File(imageFile.path);
+    });
   }
 
   @override
@@ -48,7 +51,7 @@ class _ImageInputState extends State<ImageInput> {
         Expanded(
           child: FlatButton.icon(
               icon: Icon(Icons.camera),
-              onPressed: _takePicture(),
+              onPressed: _takePicture,
               label: Text('Take Picture'),
               textColor: Theme.of(context).primaryColor),
         ),
