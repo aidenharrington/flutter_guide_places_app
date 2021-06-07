@@ -38,5 +38,6 @@ class GreatPlaces with ChangeNotifier {
               location: null,
             ))
         .toList();
+    notifyListeners();
   }
 }
